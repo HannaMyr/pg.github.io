@@ -1,0 +1,156 @@
+/ *
+  Карта погоды от / u / _skywalker на Reddit
+  Sun Animation by Benedikte on CodePen
+* /
+
+@import  url ( http://fonts.googleapis.com/css?family=Roboto );
+@import  url ( http://fonts.googleapis.com/css?family=Lobster );
+
+
+Html , body , div , span , applet , object , iframe , p , blockquote , pre , a , abbr , acronym , address , big , cite , code , del , dfn , em , img , ins , kbd , q , s , Самп , маленький , забавный , сильный ,к югу , SUP , тт , вар , б , у , я , центр , дл , дт , дд , ол , ул , литий , FIELDSET , формы , этикетки , легенды , таблицы , заголовок , TBODY , TFOOT , THEAD , тр , е , Td , статья , в сторону ,холст , деталь , код вставка , рисунок , figcaption , сноска , заголовок , HGroup , меню , навигация , выход , рубин , раздел , резюме , время , знак , аудио , видео , h1 {Заголовок , hgroup , menu , nav , output , ruby , section , summary , time , mark , audio , video , h1 {Заголовок , hgroup , menu , nav , output , ruby , section , summary , time , mark , audio , video , h1 {
+  Margin : 0 ;
+  Заполнение : 0 ;
+  Border : 0 ;
+  Vertical-align : базовый ;
+}
+
+Body {
+    Margin : 0 ;
+    Заполнение : 0 ;
+    Фон : rgba ( 26 , 188 , 156 , 1,0 );
+}
+
+.container {
+    Ширина : 100 % ; Высота : 100 % ;
+    Margin : 100 px  auto ;
+}
+
+.card {
+    Margin : 100 px  auto ;
+    фон : #fff ;
+    Высота : 220 пикселей ; Ширина : 340 пикселей ;
+    Border-radius : 7 px ;
+    Box-shadow : 0,3 px  0,3 px  0,3 px  1 px  rgba ( 0 , 0 , 0 , 0,2 );
+    Font-family : « Open Sans » , sans-serif ;
+}
+
+.city , .date {
+    Цвет : серый ;
+    Margin-left : 35 px ;
+}
+
+.city {
+    Padding-top : 50 px ;
+    Размер шрифта : 26 пикселей ;
+}
+.date {
+    Размер шрифта : 20 пикселей ;
+    Line-height : 40 px ;
+}
+
+.sun {
+    Позиция : абсолютная ;
+    Display : inline ;
+    Ширина : 70 пикселей ;
+    Высота : 70 px ;
+    Margin-left : 35 px ;
+    Фон : rgba ( 241 , 196 , 15 , 1,0 );
+    -moz-border-radius : 50 px ;
+    -webkit-border-radius : 50 px ;
+    Радиус границы : 50 пикселей ;
+}
+
+.temp {
+    Padding-left : 125 px ;
+    Padding-top : 6 px ;
+    Размер шрифта : 50 пикселей ;
+    Позиция : фиксированная ;
+}
+
+.container-sun {
+    Text-align : center ;
+    Позиция : абсолютная ;
+    Display : inline ;
+    Margin-left : 35 px ;
+}
+
+.svg-sun {
+    Ширина : 75 пикселей ;
+    Высота : 75 px ;
+
+    -webkit-transform-origin : центр  центра ;
+    -moz-transform-origin : 50 %  50 % ;
+    -o-transform-origin : центр  центра ;
+    -ms-transform-origin : центр  центра ;
+    Transform-origin : 50 %  50 % ;
+
+    -webkit-animation : spin 25 s  линейный  бесконечный , солнечное свечение 3 s  0 s  линейное  бесконечное ;
+    -moz-animation : spin 25 s  линейный  бесконечный , солнечное свечение 3 s  0 s  линейное  бесконечное ;
+    -o-animation : spin 25 s  линейный  бесконечный , солнечное свечение 3 s  0 s  линейное  бесконечное ;
+    -ms-animation : spin 25 s  linear  infin , sun-glow 3 s  0 s  легкость в  бесконечности ;
+    Анимация : вращение 25 с  линейное  бесконечное , солнечное свечение 3 с  0 с  линейное  бесконечное ;
+
+}
+#sun {
+    Ширина хода : 18 ;
+    Инсульт-дашаррай : 2 ;
+    Stroke-dashoffset : 2 ;
+}
+@ -webkit-keyframes  sun-glow {
+    0% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+    50% { заполнить : # e67e22 ; Ход : # e67e22 ;}
+    100% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+}
+@ -moz-keyframes  sun-glow {
+    0% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+    50% { заполнить : # e67e22 ; Ход : # e67e22 ;}
+    100% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+}
+@ -o-keyframes  sun-glow {
+    0% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+    50% { заполнить : # e67e22 ; Ход : # e67e22 ;}
+    100% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+}
+@ -ms-keyframes  sun-glow {
+    0% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+    50% { заполнить : # e67e22 ; Ход : # e67e22 ;}
+    100% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+}
+@keyframes  sun-glow {
+    0% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+    50% { заполнить : # e67e22 ; Ход : # e67e22 ;}
+    100% { заполнить : # f1c40f ; Ход : # f1c40f ;}
+}
+
+@ -webkit-keyframes  spin {
+    100% {
+        -webkit-transform : вращать ( 360 град );
+    }
+}
+@ -moz-keyframes  spin {
+    100% {
+        -moz-transform : вращать ( 360 градусов );
+    }
+}
+@ -o-keyframes  spin {
+    100% {
+        -o-transform : вращать ( 360 град );
+    }
+}
+@ -ms-keyframes  spin {
+    100% {
+        -ms-transform : вращение ( 360 градусов );
+    }
+}
+@keyframes  spin {
+    100% {
+        Transform : вращать ( 360 градусов );
+    }
+}
+
+#weblogo {
+    Font-family : ' Lobster ' , cursive;
+    Позиция : абсолютная ;
+    Снизу : 3 % ;
+    Слева : 2 % ;
+}
